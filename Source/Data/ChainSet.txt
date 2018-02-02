@@ -1,0 +1,29 @@
+This file contains the service chains to be deployed.
+	MME	100
+    SGW	101
+    PGW	102
+    HSS	103
+    PCRF 104
+The chains to be deployed are NAS procedures, downlink and uplink chains:
+
+0	no NAS procedure chain
+1	->SGW(1)->PGW(1)-> Uplink 
+2	->SGW(2)->PGW(1)-> Uplink
+3	->PGW(1)->SGW(1)-> Downlink
+4 	->PGW(1)->SGW(2)-> Downlink
+5	->MME(1)->HSS(1)->MME(1)->PGW(1)->PCRF(1)->PGW(1)->SGW(1)->MME(1)->SGW(1)->PGW(1)->SGW(1)->MME(1)-> Attach NAS
+6	->MME(1)->SGW(1)->MME(1)-> X2 Handover NAS
+7	->MME(1)->MME(2)->SGW(2)->MME(2)->MME(1)->MME(2)->SGW(2)->MME(2)->MME(1)->SGW(1)->MME(1)-> S1 Handover NAS
+8	->MME(1)->SGW(1)->PGW(1)->PCRF(1)->PGW(1)->SGW(1)->MME(1)->SGW(1)->PGW(1)->SGW(1)->MME(1)->SGW(1)->PGW(1) Dedicated Bearer Establishment/ Service Request 
+Index  Set OF VNFs
+************************START OF FILE**************************
+0
+1	101,1	102,1
+2	101,2	102,1
+3	102,1	101,1
+4	102,1	101,2
+5	100,1	103,1	100,1	102,1	104,1	102,1	101,1	100,1	101,1	102,1	101,1	100,1
+6	100,1	101,1	100,1
+7	100,1	100,2	101,2	100,2	100,1	100,2	101,2	100,2	100,1	101,1	100,1
+8	100,1	101,1	102,1	104,1	102,1	101,1	100,1	101,1	102,1	101,1	100,1	101,1	102,1
+**************************END OF FILE**************************

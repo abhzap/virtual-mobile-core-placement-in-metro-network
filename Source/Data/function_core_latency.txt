@@ -1,0 +1,6 @@
+******APPLICATION****** ***INDEX***
+	MME	100
+    SGW	101
+    PGW	102
+    HSS	103
+    PCRF 104	
